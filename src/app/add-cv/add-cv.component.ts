@@ -18,6 +18,7 @@ export class AddCvComponent implements OnInit {
   addPersonne(formulaire: NgForm){
     const link=['cv'];
     this.cvService.addPersonne(formulaire.value);
+    console.log(formulaire.value)
     this.router.navigate(link);
   }
 
