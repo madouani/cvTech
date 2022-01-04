@@ -1,0 +1,18 @@
+<form #formumaire="ngForm">
+  <label for="name">Name</label>
+  <input required id="name" type="text" ngModel name="name" class="form-control">
+
+  <label for="firstname">Firstname</label>
+  <input required id="firstname" type="text" ngModel name="firstname" class="form-control">
+
+  <label for="job">Job</label>
+  <input required id="job" type="text" ngModel name="job" class="form-control">
+
+  <label for="diplome">Diplome</label>
+  <input required id="diplome" type="text" ngModel name="diplome" class="form-control">
+
+  <label for="path">Path</label>
+  <input  id="path" type="text" ngModel name="path" class="form-control">
+
+  <button [disabled]="formumaire.invalid" (click)="addPersonne(formumaire)" class="btn btn-primary">Ajouter</button>
+</form>

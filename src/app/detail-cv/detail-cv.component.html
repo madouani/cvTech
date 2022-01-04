@@ -6,13 +6,13 @@
                  <img src="assets/images/rotating_card_thumb2.png">
              </div>
              <div class="user">
-                 <img class="img-circle" src="assets/images/{{personne.path}}">
+                 <img class="img-circle" src="assets/images/{{personne?.path|defaultImage}}">
              </div>
              <div class="content">
                  <div class="main">
-                     <h3 class="name">{{personne.firstname}}</h3>
-                     <p class="profession">{{personne.job}}</p>
-                     <p class="text-center">{{personne.diplome}}</p>
+                     <h3 class="name">{{personne?.firstname|titlecase}}</h3>
+                     <p class="profession">{{personne?.job}}</p>
+                     <p class="text-center">{{personne?.diplome}}</p>
                  </div>
                  <div class="footer">
                      <i class="fa fa-mail-forward"></i> Auto Rotation
@@ -26,7 +26,7 @@
              <div class="content">
                  <div class="main">
                      <h4 class="text-center">Job Description</h4>
-                     <p class="text-center">{{personne.resumer}}</p>
+                     <p class="text-center">{{personne?.resumer}}</p>
 
                      <div class="stats-container">
                          <div class="stats">
@@ -54,9 +54,8 @@
 
              <div class="footer">
                  <div class="social-links text-center">
-                     <a href="https://creative-tim.com" class="facebook">Facebook<i class="fa fa-facebook fa-fw" ></i></a>
-                     <a href="https://creative-tim.com" class="google">Google<i class="fa fa-google-plus fa-fw"></i></a>
-                     <a href="https://creative-tim.com" class="twitter">Twitter<i class="fa fa-twitter fa-fw"></i></a>
+                     <button (click)="embaucher()" class="btn btn-success">Embaucher</button>
+                     <button (click)="moreInfo()" class="btn btn-primary">Plus de détails</button>
                  </div>
              </div>
          </div> <!-- end back panel -->

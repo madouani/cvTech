@@ -1,5 +1,8 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Personne } from '../Model/Personne';
+import { PremierService } from '../premier.service';
+import { CvService } from '../Service/cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -10,19 +13,13 @@ export class CvComponent implements OnInit {
 
   personnes: Personne[];
   selectedPersonne : Personne;
-  constructor() { }
+  constructor(private premierService:PremierService, private cvService:CvService) {
+    this.personnes=this.cvService.getPersonne();
+  }
 
   ngOnInit(): void {
-    this.personnes = [
-      new Personne(1,  'ADOUANI', 'Mahmoud', 'Image_Mah_CV2.jpg', 'Diplôme national Ingénieur en Informatique','FullStack Developper','Certifications : ITIL® | OCA® Java 8 Certified | Scrum SFPC® | RHCSA® \
-      Développeur Java/Spring/Angular \
-      Java 8, Spring Boot,Spring MVC, Spring Data, JPA, Hibernate \
-      Web service API REST, Docker, Jenkins \
-      Angular, Type Script, Bootstrap, CSS \
-      Base de données : Oracle, PostgreSQL, MySQL, SQL Server, SQL, PLSQL \
-      Eclipse, Spring Tool Suite, VSCODE, Swagger, Postman, Maven, GIT, JIRA'),
-      new Personne(2, 'Torchkana', 'Anga','rotating_card_profile.png', 'Commerce electronique','Marketing digital','Résumer Marketing' )
-    ]
+    this.personnes ;
+    this.premierService.logger(this.personnes);
   }
 
   selectPersonne(personne){

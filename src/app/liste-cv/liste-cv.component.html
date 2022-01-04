@@ -1,7 +1,10 @@
 
 <ul class="list-group">
   <li class="list-group-item disabled" aria-disabled="true">Liste des CV</li>
-  <app-item-cv  class="list-group-item" (selectedPersonne)="selectPersonneLCV($event)" [personne]="personnes[0]"></app-item-cv>
-  <app-item-cv  class="list-group-item" (selectedPersonne)="selectPersonneLCV($event)" [personne]="personnes[1]"></app-item-cv>
+    <app-item-cv *ngFor="let personne of personnes "
+    (selectedPersonne)="selectPersonneLCV($event)"
+    [personne]="personne"
+    >
+    </app-item-cv>
 </ul>
 
