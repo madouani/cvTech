@@ -11,7 +11,7 @@ export class ObservableComponent implements OnInit {
 
   monObservable: Observable<any>;
   mesImages = [
-    'lateral1.jpg','lateral2.jpg'
+    'lateral1.jpg','lateral2.jpg','rotating_card_thumb.jpg'
   ];
   currentImage: any;
   constructor() { }
